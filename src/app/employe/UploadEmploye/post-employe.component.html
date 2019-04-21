@@ -1,0 +1,84 @@
+<mat-card>
+  <h2 class="title">Add Employe</h2>
+  <form #myForm="ngForm" [formGroup]="CreateEmploye" (ngSubmit)="onsubmit()">
+    <div>
+      <mat-form-field>
+        <input
+          matInput
+          type="empName"
+          placeholder="Employee Name*"
+          formControlName="empName"
+          required
+        />
+        <mat-error>Please enter a valid empName</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input
+          matInput
+          type="empID"
+          placeholder="Emloyee ID*"
+          formControlName="empID"
+          required
+        />
+        <mat-error>Please enter a valid empID</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input
+          matInput
+          type="empDomain"
+          placeholder="Emloyee Domain*"
+          formControlName="empDomain"
+          required
+        />
+        <mat-error>Please enter a valid empDomain</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input
+          matInput
+          type="empSalary"
+          placeholder="Emloyee Salary*"
+          formControlName="empSalary"
+          required
+        />
+        <mat-error>Please enter a valid empSalary</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input
+          matInput
+          type="empMobile"
+          placeholder="Emloyee Mobile*"
+          formControlName="empMobile"
+          required
+        />
+        <mat-error>Please enter a valid empMobile</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-radio-group
+        formControlName="empType"
+        required
+        aria-label="Select an option"
+      >
+        <mat-radio-button value="Male">Male</mat-radio-button>
+        <mat-radio-button value="Female">Female</mat-radio-button>
+      </mat-radio-group>
+      <br />
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        [disabled]="!CreateEmploye.valid"
+      >
+        Submit
+      </button>
+      <button mat-flat-button color="warn" type="button" (click)="clear()">
+        Clear
+      </button>
+    </div>
+  </form>
+</mat-card>
+<br />

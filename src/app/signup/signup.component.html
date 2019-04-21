@@ -1,0 +1,51 @@
+<mat-card>
+  <h2 class="title">Registration</h2>
+  <form #myForm="ngForm" [formGroup]="signupform" (ngSubmit)="onsubmit()">
+    <div>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="Name*"
+          formControlName="name"
+        />
+        <mat-error>Please enter a valid name</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input
+          matInput
+          type="email"
+          placeholder="Email*"
+          formControlName="email"
+        />
+        <mat-error>Please enter a valid email</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Phone Number*"
+          formControlName="phoneNumber"
+        />
+        <mat-error>Please enter a valid ph.no</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          placeholder="Password*"
+          formControlName="password"
+        />
+        <mat-error>Please enter a valid password</mat-error>
+      </mat-form-field>
+      <br />
+
+      <button mat-flat-button color="primary" type="submit" [disabled]="!signupform.valid">SignUp</button>
+      <button mat-flat-button color="warn" type="button" (click)="clear()">Cancel</button>
+    </div>
+  </form>
+</mat-card>
+<br />
+<br />
